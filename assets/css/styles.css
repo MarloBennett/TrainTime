@@ -1,0 +1,16 @@
+h1 {
+	font-family: 'Permanent Marker', cursive;
+	text-align: center;
+}
+
+h3 {
+	font-family: 'Shadows Into Light', sans-serif;
+	font-size: 30px;
+	text-align: center;
+}
+
+.panel-title {
+	font-family: 'Shadows Into Light', sans-serif;
+	font-size: 20px;
+	text-align: left;
+}

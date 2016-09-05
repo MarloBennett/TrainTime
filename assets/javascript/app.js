@@ -65,7 +65,7 @@ firebase.database().ref().on("child_added", function(childSnapshot) {
 	console.log(newTrainFrequency);
 
 	//add data to train schedule
-	$("#trainSchedule > tobody").append("<tr><td>" + newTrainName + "</td><td>" + newTrainDestination + "</td><td>" + newTrainFrequency + "</td><td></td><td></td>");
+	$("#train-schedule > tbody").append("<tr class='active'><td>" + newTrainName + "</td><td>" + newTrainDestination + "</td><td>" + newTrainFrequency + "</td><td>tk</td><td>tk</td></tr>");
 
 //end of add to database and html table function
 });

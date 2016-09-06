@@ -71,15 +71,15 @@ firebase.database().ref().on("child_added", function(childSnapshot) {
 
 	//difference between now and the train's first trip time
 	var difference = moment().diff(moment(newTrainTimeDisplay), "minutes");
-	console.log("difference " + moment(difference).format("mm"));
+	console.log("difference: " + difference);
 
 	//remainder is time left between trains
 	var trainRemainder = difference % newTrainFrequency;
-	console.log("remainder :" + trainRemainder);
+	console.log("remainder: " + trainRemainder);
 
 	//minutes until train
 	var minutesLeft = newTrainFrequency - trainRemainder;
-	console.log("minutes left :" + minutesLeft);
+	console.log("minutes left: " + minutesLeft);
 
 	var nextTrain = moment().add(minutesLeft, "minutes");
 	console.log ("arrival: " + moment(nextTrain).format("hh:mm"));

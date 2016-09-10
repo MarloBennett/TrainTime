@@ -12,6 +12,8 @@ var newTrainDestination;
 var newTrainTime;
 var newTrainFrequency;
 
+$(document).ready(function() {
+
 //button for ading trains
 $("#addTrain").on("click", function() {
 
@@ -31,11 +33,6 @@ $("#addTrain").on("click", function() {
 
 	//upload train data to firebase
 	firebase.database().ref().push(newTrainListing);
-
-/*	console.log(newTrainListing.name);
-	console.log(newTrainListing.dest);
-	console.log(newTrainListing.first);
-	console.log(newTrainListing.freq);*/
 
 	//clears text boxes
 	$("#trainNameInput").val("");
@@ -62,9 +59,6 @@ firebase.database().ref().on("child_added", function(childSnapshot) {
 	console.log(newTrainTime);
 	console.log(newTrainFrequency);
 
-	/*var currentTime = moment();
-	console.log("current time " + moment(currentTime).format("hh:mm"));*/
-
 	//time of first train
 	var newTrainTimeDisplay = moment(newTrainTime, "hh:mm").subtract(1, "years");
 	console.log(newTrainTimeDisplay);
@@ -88,4 +82,7 @@ firebase.database().ref().on("child_added", function(childSnapshot) {
 	$("#train-schedule > tbody").append("<tr class='active'><td>" + newTrainName + "</td><td>" + newTrainDestination + "</td><td>" + newTrainFrequency + "</td><td>" + moment(nextTrain).format('hh:mm') + "</td><td>" + minutesLeft + "</td></tr>");
 
 //end of add to database and html table function
+});
+
+//end of document ready function
 });
